@@ -23,6 +23,8 @@ import { parseBRL, useCart } from "@/lib/cart";
 
 
 import heroPizza from "@/assets/hero-pizza.jpg";
+import heroBoxAsset from "@/assets/hero-pizza-box.png.asset.json";
+import sobreBoxAsset from "@/assets/pizza-box-2.png.asset.json";
 import {
   alcoholicDrinks,
   drinks,
