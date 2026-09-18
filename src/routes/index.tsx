@@ -23,8 +23,6 @@ import { parseBRL, useCart } from "@/lib/cart";
 
 
 import heroPizza from "@/assets/hero-pizza.jpg";
-import heroPizzaWide from "@/assets/hero-pizza-wide.jpg";
-import ovenPizza from "@/assets/oven-pizza.jpg";
 import {
   alcoholicDrinks,
   drinks,
@@ -157,13 +155,7 @@ function IndexContent() {
         </div>
 
         <div className="absolute inset-y-0 right-0 w-1/2">
-          <img
-            src={heroPizzaWide}
-            alt="Pizza margherita artesanal da Brandi Pizzerie"
-            width={1280}
-            height={1600}
-            className="h-full w-full object-cover object-center"
-          />
+          {/* hero image removed — awaiting replacement */}
           {/* fades suaves em todas as bordas para integrar a foto ao fundo */}
           <div
             aria-hidden
@@ -196,14 +188,7 @@ function IndexContent() {
             </p>
           </div>
           <div className="relative">
-            <img
-              src={ovenPizza}
-              alt="Pizza artesanal saindo do forno a lenha"
-              loading="lazy"
-              width={1008}
-              height={1200}
-              className="h-[420px] w-full object-cover lg:h-[520px]"
-            />
+            {/* oven image removed — awaiting replacement */}
           </div>
         </div>
       </section>
