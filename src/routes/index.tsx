@@ -194,7 +194,11 @@ function IndexContent() {
             </p>
           </div>
           <div className="relative">
-            {/* oven image removed — awaiting replacement */}
+            <img
+              src={sobreBoxAsset.url}
+              alt="Pizza artesanal Brandi em caixa de delivery"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </section>
