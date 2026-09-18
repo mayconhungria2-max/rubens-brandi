@@ -157,7 +157,11 @@ function IndexContent() {
         </div>
 
         <div className="absolute inset-y-0 right-0 w-1/2">
-          {/* hero image removed — awaiting replacement */}
+          <img
+            src={heroBoxAsset.url}
+            alt="Pizza artesanal Brandi em caixa de delivery"
+            className="h-full w-full object-cover"
+          />
           {/* fades suaves em todas as bordas para integrar a foto ao fundo */}
           <div
             aria-hidden
