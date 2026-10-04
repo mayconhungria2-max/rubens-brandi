@@ -23,7 +23,7 @@ function FlavorCard({
   kind: "savory" | "sweet";
 }) {
   const { add } = useCart();
-  const prices = flavorPrices[kind];
+  const prices = flavorPrices[flavor.name] ?? flavorPrices["Mozzarella"];
   const photo = flavorPhoto(flavor.name);
 
   return (
