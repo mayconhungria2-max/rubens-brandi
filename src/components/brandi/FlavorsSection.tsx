@@ -21,7 +21,7 @@ function FlavorCard({
   index: number;
 }) {
   const { add } = useCart();
-  const prices = flavorPrices[flavor.name] ?? flavorPrices["Mozzarella"];
+  const prices = flavorPrices[flavor.name] ?? { "Média": 51, "Família": 85 };
   const photo = flavorPhoto(flavor.name);
 
   return (
