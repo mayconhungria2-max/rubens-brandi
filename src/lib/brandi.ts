@@ -114,7 +114,7 @@ export type Pizza = {
 export const pizzas: Pizza[] = [
   {
     name: "BRANDI",
-    price: "R$ 60,00",
+    price: "R$ 110,00",
     short: "Presunto Royale trançado, Catupiry® e cebola roxa",
     description:
       "Mozzarella speciale, finas fatias de presunto Royale trançado, recheado com Catupiry® e coberto com rodelas de cebola roxa, salpicada com orégano e azeitonas sem caroço.",
@@ -122,7 +122,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "GREGA",
-    price: "R$ 55,00",
+    price: "R$ 95,00",
     short: "Beringela temperada, tomate e cebola roxa",
     description:
       "Mozzarella speciale, beringela temperada, coberta com pedaços de tomate, rodelas de cebola roxa, salpicada com queijo parmesão, orégano e azeitonas sem caroço.",
@@ -130,7 +130,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "MARGHERITA",
-    price: "R$ 55,00",
+    price: "R$ 88,50",
     short: "Tomate em rodelas e manjericão fresco",
     description:
       "Mozzarella speciale, rodelas de tomate salpicada com manjericão fresco, orégano e azeitonas sem caroço.",
@@ -138,7 +138,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "PALERMO",
-    price: "R$ 65,00",
+    price: "R$ 110,00",
     short: "Pepperoni gourmet e pimentões coloridos",
     description:
       "Mozzarella speciale, finas rodelas de pepperoni gourmet, tiras de pimentão verde, vermelho e amarelo, salpicada com parmesão, orégano e azeitonas sem caroço.",
@@ -146,7 +146,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "PARIS",
-    price: "R$ 65,00",
+    price: "R$ 115,00",
     short: "Queijo Brie, geleia de pimenta e damasco",
     description:
       "Queijo Brie, geleia de pimenta e pedacinhos de damasco.",
@@ -154,7 +154,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "PISA",
-    price: "R$ 65,00",
+    price: "R$ 115,00",
     short: "Búfala, alcachofra e presunto parma",
     description:
       "Mozzarella de búfala, pedaços de alcachofra, finas fatias de presunto parma, salpicada de manjericão fresco, orégano e azeitonas sem caroço.",
@@ -162,7 +162,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "VENEZA",
-    price: "R$ 60,00",
+    price: "R$ 110,00",
     short: "Búfala, tomate seco e rúcula fresca",
     description:
       "Mozzarella de búfala, tomates secos, coberta com rúcula fresca, salpicada com orégano e azeitonas sem caroço.",
@@ -170,7 +170,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "VIA ÁPPIA",
-    price: "R$ 62,00",
+    price: "R$ 110,00",
     short: "Calabresa em fatias finas e palmito",
     description:
       "Mozzarella speciale, coberta com finas fatias de calabresa, pedaços de palmito, salpicada com parmesão, orégano e azeitonas sem caroço.",
@@ -178,7 +178,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "ZUCCHINI",
-    price: "R$ 55,00",
+    price: "R$ 95,00",
     short: "Abobrinha grelhada e Polenguinho",
     description:
       "Mozzarella speciale, coberta com fatias de abobrinha grelhada no azeite, pedaços de queijo Polenguinho, salpicada com parmesão, orégano e azeitonas sem caroço.",
@@ -189,7 +189,7 @@ export const pizzas: Pizza[] = [
 export const sweetPizzas: Pizza[] = [
   {
     name: "BELA",
-    price: "R$ 37,00",
+    price: "R$ 65,00",
     short: "Banana flambada com conhaque e canela",
     description:
       "Pedaços de banana dourados com açúcar, flambada com conhaque e polvilhada com canela.",
@@ -324,4 +324,6 @@ export const flavorPrices: Record<string, Record<SizeName, number>> = {
   "Verona": { "Média": 41.4, "Família": 69 },
   "Via Appia": { "Média": 66, "Família": 110 },
   "Zucchini": { "Média": 57, "Família": 95 },
+  "Bologna": { "Média": 69, "Família": 115 },
+  "Catupiry": { "Média": 52.8, "Família": 88 },
 };
