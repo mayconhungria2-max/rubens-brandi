@@ -16,11 +16,9 @@ import { formatBRL, useCart } from "@/lib/cart";
 function FlavorCard({
   flavor,
   index,
-  kind,
 }: {
   flavor: Flavor;
   index: number;
-  kind: "savory" | "sweet";
 }) {
   const { add } = useCart();
   const prices = flavorPrices[flavor.name] ?? flavorPrices["Mozzarella"];
