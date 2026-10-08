@@ -287,7 +287,7 @@ export const sizes = [
 
 export type SizeName = "Una Persna" | "Famiglia";
 
-// Preços por sabor: "Una Persna" = Una Persna (4 pedaços), "Famiglia" = Famiglia (8 pedaços)
+// Preços por sabor: "Una Persna" (4 pedaços), "Famiglia" (8 pedaços)
 export const flavorPrices: Record<string, Record<SizeName, number>> = {
   "5 Queijos": { "Una Persna": 69, "Famiglia": 115 },
   "Atum": { "Una Persna": 53.1, "Famiglia": 88.5 },
