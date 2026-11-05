@@ -1,4 +1,5 @@
 import {
+  type Context,
   createContext,
   useContext,
   useEffect,
@@ -71,7 +72,13 @@ type CartContextValue = {
   clear: () => void;
 };
 
-const CartContext = createContext<CartContextValue | null>(null);
+// Keep one context instance across hot reloads so provider and consumers always match.
+const globalCart = globalThis as unknown as {
+  __brandiCartContext?: Context<CartContextValue | null>;
+};
+const CartContext =
+  globalCart.__brandiCartContext ??
+  (globalCart.__brandiCartContext = createContext<CartContextValue | null>(null));
 
 const STORAGE_KEY = "brandi-cart-v1";
 
