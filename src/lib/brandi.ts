@@ -96,7 +96,7 @@ export const FACEBOOK_URL = "https://www.facebook.com/brandi.pizzerie";
 
 export const GOOGLE = "Brandi Pizzerie";
 export const GOOGLE_URL =
-  "https://www.google.com/maps/search/?api=1&query=Brandi+Pizzerie";
+  "https://www.google.com/search?kgmid=/g/11jh__y0rb&q=Brandi+Pizzerie";
 
 export function whatsappLink(message?: string) {
   const text =
