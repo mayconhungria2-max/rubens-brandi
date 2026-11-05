@@ -1,4 +1,5 @@
 import {
+  type Context,
   createContext,
   useContext,
   useEffect,
@@ -73,7 +74,7 @@ type CartContextValue = {
 
 // Keep one context instance across hot reloads so provider and consumers always match.
 const globalCart = globalThis as unknown as {
-  __brandiCartContext?: React.Context<CartContextValue | null>;
+  __brandiCartContext?: Context<CartContextValue | null>;
 };
 const CartContext =
   globalCart.__brandiCartContext ??
