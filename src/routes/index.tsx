@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ChevronRight,
+  Facebook,
   Instagram,
   MapPin,
   
@@ -29,7 +30,12 @@ import {
   alcoholicDrinks,
   drinks,
   featured,
+  FACEBOOK,
+  FACEBOOK_URL,
+  GOOGLE,
+  GOOGLE_URL,
   INSTAGRAM,
+  INSTAGRAM_URL,
   
   pizzas,
   sweetPizzas,

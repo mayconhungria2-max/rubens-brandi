@@ -88,7 +88,15 @@ export function flavorPhoto(name: string): string | undefined {
 export const WHATSAPP_NUMBER = "5511942133516";
 export const WHATSAPP_DISPLAY = "(11) 94213-3516";
 
-export const INSTAGRAM = "@brandipizzerie";
+export const INSTAGRAM = "@brandipizzerie.ofc";
+export const INSTAGRAM_URL = "https://www.instagram.com/brandipizzerie.ofc";
+
+export const FACEBOOK = "Brandipizzerie";
+export const FACEBOOK_URL = "https://www.facebook.com/100855334873253";
+
+export const GOOGLE = "Brandi Pizzerie";
+export const GOOGLE_URL =
+  "https://www.google.com/maps/search/?api=1&query=Brandi+Pizzerie";
 
 export function whatsappLink(message?: string) {
   const text =

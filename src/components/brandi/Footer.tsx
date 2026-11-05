@@ -1,7 +1,12 @@
 import logoAsset from "@/assets/brandi-logo-mark-light.png.asset.json";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
 import {
+  FACEBOOK,
+  FACEBOOK_URL,
+  GOOGLE,
+  GOOGLE_URL,
   INSTAGRAM,
+  INSTAGRAM_URL,
   navLinks,
   whatsappLink,
   WHATSAPP_DISPLAY,
