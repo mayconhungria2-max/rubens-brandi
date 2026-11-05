@@ -76,12 +76,32 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="https://instagram.com/brandipizzerie"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 transition-colors hover:text-cream"
               >
                 <Instagram className="h-4 w-4" /> {INSTAGRAM}
+              </a>
+            </li>
+            <li>
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-cream"
+              >
+                <Facebook className="h-4 w-4" /> {FACEBOOK}
+              </a>
+            </li>
+            <li>
+              <a
+                href={GOOGLE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-cream"
+              >
+                <MapPin className="h-4 w-4" /> {GOOGLE}
               </a>
             </li>
           </ul>

@@ -518,12 +518,34 @@ function IndexContent() {
               <div>
                 <h3 className="eyebrow text-forest-light">Instagram</h3>
                 <a
-                  href="https://instagram.com/brandipizzerie"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-2 inline-flex items-center gap-2 font-serif text-lg text-forest hover:text-brand-red"
                 >
                   <Instagram className="h-4 w-4 text-brand-red" /> {INSTAGRAM}
+                </a>
+              </div>
+              <div>
+                <h3 className="eyebrow text-forest-light">Facebook</h3>
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-2 font-serif text-lg text-forest hover:text-brand-red"
+                >
+                  <Facebook className="h-4 w-4 text-brand-red" /> {FACEBOOK}
+                </a>
+              </div>
+              <div>
+                <h3 className="eyebrow text-forest-light">Google</h3>
+                <a
+                  href={GOOGLE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-2 font-serif text-lg text-forest hover:text-brand-red"
+                >
+                  <MapPin className="h-4 w-4 text-brand-red" /> {GOOGLE}
                 </a>
               </div>
               <div>
