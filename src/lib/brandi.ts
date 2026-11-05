@@ -92,7 +92,7 @@ export const INSTAGRAM = "@brandipizzerie.ofc";
 export const INSTAGRAM_URL = "https://www.instagram.com/brandipizzerie.ofc";
 
 export const FACEBOOK = "Brandipizzerie";
-export const FACEBOOK_URL = "https://www.facebook.com/100855334873253";
+export const FACEBOOK_URL = "https://www.facebook.com/brandi.pizzerie";
 
 export const GOOGLE = "Brandi Pizzerie";
 export const GOOGLE_URL =
