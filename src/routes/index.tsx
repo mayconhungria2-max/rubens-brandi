@@ -101,10 +101,18 @@ function MenuRow({
           {pizza.name}
         </span>
         <span className="dotted-lead" />
-        <span className="font-serif text-base text-forest">{pizza.price}</span>
+        <span className="font-serif text-base whitespace-nowrap text-forest">
+          {pizza.price}
+        </span>
+        <span className="ml-2 text-[0.55rem] tracking-[0.14em] whitespace-nowrap text-forest-light uppercase">
+          Famiglia
+        </span>
       </div>
       <p className="mt-1.5 max-w-md text-[0.82rem] leading-relaxed text-muted-foreground">
         {pizza.description}
+      </p>
+      <p className="mt-2 text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
+        Una Persna · 4 pedaços — {pizza.priceSmall}
       </p>
     </button>
   );
@@ -283,6 +291,12 @@ function IndexContent() {
                   </p>
                   <p className="mt-4 font-serif text-lg text-forest">
                     {p.price}
+                  </p>
+                  <p className="mt-1 text-[0.55rem] tracking-[0.14em] text-forest-light uppercase">
+                    Famiglia · 8 pedaços
+                  </p>
+                  <p className="mt-1.5 text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
+                    Una Persna · 4 pedaços — {p.priceSmall}
                   </p>
                 </div>
               </button>

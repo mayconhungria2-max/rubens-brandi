@@ -29,7 +29,15 @@ export function PizzaDialog({
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {pizza.description}
               </p>
-              <p className="font-serif text-2xl text-forest">{pizza.price}</p>
+              <div className="flex flex-col gap-1">
+                <p className="font-serif text-2xl text-forest">{pizza.price}</p>
+                <p className="text-[0.55rem] tracking-[0.14em] text-forest-light uppercase">
+                  Famiglia · 8 pedaços
+                </p>
+                <p className="text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
+                  Una Persna · 4 pedaços — {pizza.priceSmall}
+                </p>
+              </div>
               <a
                 href={pizzaLink(pizza.name)}
                 target="_blank"
