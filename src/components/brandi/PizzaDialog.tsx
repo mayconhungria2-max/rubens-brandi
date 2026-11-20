@@ -1,5 +1,8 @@
+import { Plus } from "lucide-react";
+
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { pizzaLink, type Pizza } from "@/lib/brandi";
+import { normalizeName, pizzaLink, type Pizza } from "@/lib/brandi";
+import { parseBRL, useCart } from "@/lib/cart";
 
 export function PizzaDialog({
   pizza,
@@ -8,6 +11,15 @@ export function PizzaDialog({
   pizza: Pizza | null;
   onClose: () => void;
 }) {
+  const { add } = useCart();
+
+  const sizes = pizza
+    ? [
+        { name: "Una Persna", detail: "4 pedaços", price: pizza.priceSmall },
+        { name: "Famiglia", detail: "8 pedaços", price: pizza.price },
+      ]
+    : [];
+
   return (
     <Dialog open={!!pizza} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="max-w-2xl overflow-hidden rounded-none border-border bg-card p-0">
@@ -37,6 +49,25 @@ export function PizzaDialog({
                 <p className="text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
                   Una Persna · 4 pedaços — {pizza.priceSmall}
                 </p>
+              </div>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {sizes.map((s) => (
+                  <button
+                    key={s.name}
+                    onClick={() =>
+                      add({
+                        id: `${normalizeName(pizza.name)}-${s.name}`,
+                        name: `Pizza ${pizza.name}`,
+                        detail: s.name,
+                        unitPrice: parseBRL(s.price),
+                      })
+                    }
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-border bg-background px-3 py-2 text-[0.68rem] font-medium tracking-[0.1em] text-forest uppercase transition-colors hover:border-brand-red hover:bg-brand-red hover:text-primary-foreground"
+                  >
+                    <Plus className="h-3.5 w-3.5" /> {s.name} · {s.detail} —{" "}
+                    {s.price}
+                  </button>
+                ))}
               </div>
               <a
                 href={pizzaLink(pizza.name)}

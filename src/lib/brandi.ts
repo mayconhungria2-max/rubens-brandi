@@ -347,4 +347,5 @@ export const flavorPrices: Record<string, Record<SizeName, number>> = {
   "Zucchini": { "Una Persna": 57, "Famiglia": 95 },
   "Bologna": { "Una Persna": 69, "Famiglia": 115 },
   "Catupiry": { "Una Persna": 52.8, "Famiglia": 88 },
+  "Capri": { "Una Persna": 66, "Famiglia": 110 },
 };

@@ -5,6 +5,7 @@ import {
   flavorPhoto,
   flavorPrices,
   gourmetFlavors,
+  normalizeName,
   sizes,
   sweetFlavors,
   traditionalFlavors,
@@ -75,7 +76,7 @@ function FlavorCard({
             key={size}
             onClick={() =>
               add({
-                id: `${flavor.name}-${size}`,
+                id: `${normalizeName(flavor.name)}-${size}`,
                 name: `Pizza ${flavor.name}`,
                 detail: size,
                 unitPrice: prices[size],
