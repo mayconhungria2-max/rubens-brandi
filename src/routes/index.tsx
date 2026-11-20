@@ -30,6 +30,7 @@ import {
   alcoholicDrinks,
   drinks,
   featured,
+  gourmetPizzas,
   FACEBOOK,
   FACEBOOK_URL,
   GOOGLE,
@@ -37,7 +38,7 @@ import {
   INSTAGRAM,
   INSTAGRAM_URL,
   
-  pizzas,
+  savoryPizzas,
   sweetPizzas,
   whatsappLink,
   WHATSAPP_DISPLAY,
@@ -244,7 +245,14 @@ function IndexContent() {
             <div>
               <h3 className="eyebrow text-forest-light">Pizzas salgadas</h3>
               <div className="mt-7 grid gap-x-14 gap-y-8 md:grid-cols-2">
-                {pizzas.map((p) => (
+                {savoryPizzas.map((p) => (
+                  <MenuRow key={p.name} pizza={p} onSelect={setSelected} />
+                ))}
+              </div>
+
+              <h3 className="eyebrow mt-14 text-forest-light">Pizzas gourmet</h3>
+              <div className="mt-7 grid gap-x-14 gap-y-8 md:grid-cols-2">
+                {gourmetPizzas.map((p) => (
                   <MenuRow key={p.name} pizza={p} onSelect={setSelected} />
                 ))}
               </div>

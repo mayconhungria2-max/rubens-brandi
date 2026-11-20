@@ -120,11 +120,13 @@ export type Pizza = {
   description: string;
   image: string;
   sweet?: boolean;
+  gourmet?: boolean;
 };
 
 export const pizzas: Pizza[] = [
   {
     name: "BRANDI",
+    gourmet: true,
     price: "R$ 110,00",
     priceSmall: "R$ 66,00",
     short: "Presunto Royale trançado, Catupiry® e cebola roxa",
@@ -134,6 +136,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "GREGA",
+    gourmet: true,
     price: "R$ 95,00",
     priceSmall: "R$ 57,00",
     short: "Beringela temperada, tomate e cebola roxa",
@@ -152,6 +155,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "PALERMO",
+    gourmet: true,
     price: "R$ 110,00",
     priceSmall: "R$ 66,00",
     short: "Pepperoni gourmet e pimentões coloridos",
@@ -161,6 +165,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "PARIS",
+    gourmet: true,
     price: "R$ 115,00",
     priceSmall: "R$ 69,00",
     short: "Queijo Brie, geleia de pimenta e damasco",
@@ -179,6 +184,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "VENEZA",
+    gourmet: true,
     price: "R$ 110,00",
     priceSmall: "R$ 66,00",
     short: "Búfala, tomate seco e rúcula fresca",
@@ -197,6 +203,7 @@ export const pizzas: Pizza[] = [
   },
   {
     name: "ZUCCHINI",
+    gourmet: true,
     price: "R$ 95,00",
     priceSmall: "R$ 57,00",
     short: "Abobrinha grelhada e Polenguinho",
@@ -205,6 +212,10 @@ export const pizzas: Pizza[] = [
     image: fotoZucchini.url,
   },
 ];
+
+// categorias do cardápio: as pizzas marcadas como gourmet saem em grupo próprio
+export const savoryPizzas = pizzas.filter((p) => !p.gourmet);
+export const gourmetPizzas = pizzas.filter((p) => p.gourmet);
 
 export const sweetPizzas: Pizza[] = [
   {
