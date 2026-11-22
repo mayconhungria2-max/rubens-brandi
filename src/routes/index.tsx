@@ -88,9 +88,11 @@ function SectionTitle({
 function SizePrices({
   pizza,
   centered = false,
+  divided = true,
 }: {
   pizza: Pizza;
   centered?: boolean;
+  divided?: boolean;
 }) {
   const options = [
     { name: "Una Persna", detail: "4 pedaços", price: pizza.priceSmall },
@@ -99,9 +101,9 @@ function SizePrices({
 
   return (
     <div
-      className={`mt-4 grid grid-cols-2 gap-3 border-t border-border/70 pt-3 ${
-        centered ? "text-center" : "text-left"
-      }`}
+      className={`grid grid-cols-2 gap-3 ${
+        divided ? "mt-4 border-t border-border/70 pt-3" : "mt-3"
+      } ${centered ? "text-center" : "text-left"}`}
     >
       {options.map((option) => (
         <div key={option.name} className="min-w-0">
@@ -130,7 +132,7 @@ function MenuRow({
   return (
     <button
       onClick={() => onSelect(pizza)}
-      className="group block w-full text-left"
+      className="group block w-full border-b border-border/70 pb-7 text-left"
     >
       <span className="text-sm font-medium tracking-[0.12em] text-brand-red transition-colors group-hover:text-brand-red-dark">
         {pizza.name}
@@ -138,7 +140,7 @@ function MenuRow({
       <p className="mt-1.5 max-w-md text-[0.82rem] leading-relaxed text-muted-foreground">
         {pizza.description}
       </p>
-      <SizePrices pizza={pizza} />
+      <SizePrices pizza={pizza} divided={false} />
     </button>
   );
 }
