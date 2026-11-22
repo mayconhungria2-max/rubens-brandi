@@ -28,7 +28,9 @@ export function PizzaDialog({
             <img
               src={pizza.image}
               alt={`Pizza ${pizza.name}`}
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-56 w-full object-cover sm:h-full"
             />
             <div className="flex min-h-0 flex-col overflow-y-auto p-7">

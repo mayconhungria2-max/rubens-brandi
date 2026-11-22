@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronRight,
   Facebook,
@@ -67,6 +67,18 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const preloadedPizzaImages = new Set<string>();
+
+function preloadPizzaImage(src: string) {
+  if (preloadedPizzaImages.has(src)) return;
+
+  preloadedPizzaImages.add(src);
+  const image = new Image();
+  image.decoding = "async";
+  image.src = src;
+  image.onerror = () => preloadedPizzaImages.delete(src);
+}
+
 function SectionTitle({
   eyebrow,
   title,
@@ -132,6 +144,9 @@ function MenuRow({
   return (
     <button
       onClick={() => onSelect(pizza)}
+      onPointerEnter={() => preloadPizzaImage(pizza.image)}
+      onPointerDown={() => preloadPizzaImage(pizza.image)}
+      onFocus={() => preloadPizzaImage(pizza.image)}
       className="group block w-full border-b border-border/70 pb-7 text-left"
     >
       <span className="text-sm font-medium tracking-[0.12em] text-brand-red transition-colors group-hover:text-brand-red-dark">
@@ -153,6 +168,18 @@ function IndexContent() {
   const [selected, setSelected] = useState<Pizza | null>(null);
   const { add } = useCart();
 
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      const menuImages = new Set(
+        [...savoryPizzas, ...gourmetPizzas, ...sweetPizzas].map(
+          (pizza) => pizza.image,
+        ),
+      );
+      menuImages.forEach(preloadPizzaImage);
+    }, 1200);
+
+    return () => window.clearTimeout(timeout);
+  }, []);
 
   return (
     <div className="min-h-screen border-l-0 bg-cream lg:border-l-[10px] lg:border-forest">
@@ -306,6 +333,9 @@ function IndexContent() {
               <button
                 key={p.name}
                 onClick={() => setSelected(p)}
+                onPointerEnter={() => preloadPizzaImage(p.image)}
+                onPointerDown={() => preloadPizzaImage(p.image)}
+                onFocus={() => preloadPizzaImage(p.image)}
                 className="group border border-border bg-card text-left transition-shadow hover:shadow-md"
               >
                 <img
