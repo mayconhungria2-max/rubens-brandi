@@ -42,19 +42,12 @@ export function PizzaDialog({
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {pizza.description}
               </p>
-              <div className="flex flex-col gap-1">
-                <p className="font-serif text-2xl text-forest">{pizza.price}</p>
-                <p className="text-[0.55rem] tracking-[0.14em] text-forest-light uppercase">
-                  Famiglia · 8 pedaços
-                </p>
-                <p className="text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
-                  Una Persna · 4 pedaços — {pizza.priceSmall}
-                </p>
-              </div>
-              <div className="grid gap-2 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-2">
                 {sizes.map((s) => (
                   <button
                     key={s.name}
+                    type="button"
+                    aria-label={`Adicionar ${pizza.name} ${s.name}, ${s.detail}, ${s.price} ao pedido`}
                     onClick={() =>
                       add({
                         id: `${normalizeName(pizza.name)}-${s.name}`,
@@ -63,10 +56,17 @@ export function PizzaDialog({
                         unitPrice: parseBRL(s.price),
                       })
                     }
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-border bg-background px-3 py-2 text-[0.68rem] font-medium tracking-[0.1em] text-forest uppercase transition-colors hover:border-brand-red hover:bg-brand-red hover:text-primary-foreground"
+                    className="flex min-w-0 flex-col items-center justify-center gap-1 border border-border bg-background px-2 py-3 text-center text-forest transition-colors hover:border-brand-red hover:bg-brand-red hover:text-primary-foreground"
                   >
-                    <Plus className="h-3.5 w-3.5" /> {s.name} · {s.detail} —{" "}
-                    {s.price}
+                    <span className="flex items-center gap-1.5 text-[0.65rem] font-medium tracking-[0.12em] uppercase">
+                      <Plus className="h-3.5 w-3.5 shrink-0" /> {s.name}
+                    </span>
+                    <span className="text-[0.62rem] tracking-[0.04em] opacity-75">
+                      {s.detail}
+                    </span>
+                    <span className="font-serif text-lg tracking-normal whitespace-nowrap">
+                      {s.price}
+                    </span>
                   </button>
                 ))}
               </div>

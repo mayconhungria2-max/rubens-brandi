@@ -85,6 +85,41 @@ function SectionTitle({
   );
 }
 
+function SizePrices({
+  pizza,
+  centered = false,
+}: {
+  pizza: Pizza;
+  centered?: boolean;
+}) {
+  const options = [
+    { name: "Una Persna", detail: "4 pedaços", price: pizza.priceSmall },
+    { name: "Famiglia", detail: "8 pedaços", price: pizza.price },
+  ];
+
+  return (
+    <div
+      className={`mt-4 grid grid-cols-2 gap-3 border-t border-border/70 pt-3 ${
+        centered ? "text-center" : "text-left"
+      }`}
+    >
+      {options.map((option) => (
+        <div key={option.name} className="min-w-0">
+          <p className="text-[0.6rem] font-medium tracking-[0.12em] text-forest-light uppercase">
+            {option.name}
+          </p>
+          <p className="mt-0.5 text-[0.62rem] text-muted-foreground">
+            {option.detail}
+          </p>
+          <p className="mt-1 font-serif text-lg whitespace-nowrap text-forest">
+            {option.price}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function MenuRow({
   pizza,
   onSelect,
@@ -97,24 +132,13 @@ function MenuRow({
       onClick={() => onSelect(pizza)}
       className="group block w-full text-left"
     >
-      <div className="flex items-baseline">
-        <span className="text-sm font-medium tracking-[0.12em] text-brand-red transition-colors group-hover:text-brand-red-dark">
-          {pizza.name}
-        </span>
-        <span className="dotted-lead" />
-        <span className="font-serif text-base whitespace-nowrap text-forest">
-          {pizza.price}
-        </span>
-        <span className="ml-2 text-[0.55rem] tracking-[0.14em] whitespace-nowrap text-forest-light uppercase">
-          Famiglia
-        </span>
-      </div>
+      <span className="text-sm font-medium tracking-[0.12em] text-brand-red transition-colors group-hover:text-brand-red-dark">
+        {pizza.name}
+      </span>
       <p className="mt-1.5 max-w-md text-[0.82rem] leading-relaxed text-muted-foreground">
         {pizza.description}
       </p>
-      <p className="mt-2 text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
-        Una Persna · 4 pedaços — {pizza.priceSmall}
-      </p>
+      <SizePrices pizza={pizza} />
     </button>
   );
 }
@@ -297,15 +321,7 @@ function IndexContent() {
                   <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                     {p.short}
                   </p>
-                  <p className="mt-4 font-serif text-lg text-forest">
-                    {p.price}
-                  </p>
-                  <p className="mt-1 text-[0.55rem] tracking-[0.14em] text-forest-light uppercase">
-                    Famiglia · 8 pedaços
-                  </p>
-                  <p className="mt-1.5 text-[0.68rem] tracking-[0.08em] text-forest-light uppercase">
-                    Una Persna · 4 pedaços — {p.priceSmall}
-                  </p>
+                  <SizePrices pizza={p} centered />
                 </div>
               </button>
             ))}
